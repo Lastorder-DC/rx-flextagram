@@ -157,7 +157,6 @@ class RxFlextagramTheme
             $identifierField[] = $field;
         }
 
-        debugPrint([$identifierTitle, $identifierField]);
         $identifierTitle = implode(', ', $identifierTitle);
 
         if (count($identifierField) === 1) {
