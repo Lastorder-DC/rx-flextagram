@@ -45,13 +45,47 @@
     });
     <!--@endif-->
 
+    function removeBoardDarkCss() {
+        const links = document.querySelectorAll('link[rel="stylesheet"]');
+        links.forEach(link => {
+            if (link.href.includes('/modules/board/skins/sketchbook5_MH/css/black.css')) {
+                link.parentNode.removeChild(link);
+            }
+        });
+    }
+
+    function addBoardDarkCss() {
+        const existingLinks = document.querySelectorAll('link[rel="stylesheet"]');
+        let blackCssLinkExists = false;
+        let boardCssLink = null;
+
+        existingLinks.forEach(link => {
+            if (link.href.includes('/modules/board/skins/sketchbook5_MH/css/black.css?t=1717584219')) {
+                blackCssLinkExists = true;
+            }
+            if (link.href.includes('/modules/board/skins/sketchbook5_MH/css/board.css')) {
+                boardCssLink = link;
+            }
+        });
+
+        if (!blackCssLinkExists && boardCssLink) {
+            const newLink = document.createElement('link');
+            newLink.rel = 'stylesheet';
+            newLink.href = '/modules/board/skins/sketchbook5_MH/css/black.css?t=1717584219';
+            boardCssLink.parentNode.insertBefore(newLink, boardCssLink.nextSibling);
+        }
+    }
+
+
     function onClickDarkThemeToggle(e) {
         const isDarkTheme = getColorScheme() === 'dark';
 
         if (isDarkTheme === true) {
             setColorScheme('light')
+            removeBoardDarkCss()
         } else {
             setColorScheme('dark')
+            addBoardDarkCss()
         }
 
         return false;
