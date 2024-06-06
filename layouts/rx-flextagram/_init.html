@@ -50,7 +50,7 @@
         let boardCssLink = null;
 
         existingLinks.forEach(link => {
-            if (link.href.includes('/modules/board/skins/sketchbook5_MH/css/black.css?t=1717584219')) {
+            if (link.href.includes('/modules/board/skins/sketchbook5_MH/css/black.css')) {
                 blackCssLinkExists = true;
             }
             if (link.href.includes('/modules/board/skins/sketchbook5_MH/css/board.css')) {
@@ -61,7 +61,7 @@
         if (!blackCssLinkExists && boardCssLink) {
             const newLink = document.createElement('link');
             newLink.rel = 'stylesheet';
-            newLink.href = '/modules/board/skins/sketchbook5_MH/css/black.css?t=1717584219';
+            newLink.href = '/modules/board/skins/sketchbook5_MH/css/black.css?t=1717684666';
             boardCssLink.parentNode.insertBefore(newLink, boardCssLink.nextSibling);
         }
     }
