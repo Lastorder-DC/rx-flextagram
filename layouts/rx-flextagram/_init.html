@@ -35,16 +35,6 @@
 
 {@ // 다크 모드 전환 코드 }
 <script>
-    <!--@if(\Rhymix\Framework\UA::getColorScheme() === 'auto')-->
-    window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e) {
-        if (e.matches) {
-            $('body').removeClass('color_scheme_light').addClass('color_scheme_dark');
-        } else {
-            $('body').removeClass('color_scheme_dark').addClass('color_scheme_light');
-        }
-    });
-    <!--@endif-->
-
     function removeBoardDarkCss() {
         const links = document.querySelectorAll('link[rel="stylesheet"]');
         links.forEach(link => {
@@ -76,6 +66,17 @@
         }
     }
 
+    <!--@if(\Rhymix\Framework\UA::getColorScheme() === 'auto')-->
+    window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e) {
+        if (e.matches) {
+            $('body').removeClass('color_scheme_light').addClass('color_scheme_dark');
+            addBoardDarkCss()
+        } else {
+            $('body').removeClass('color_scheme_dark').addClass('color_scheme_light');
+            removeBoardDarkCss()
+        }
+    });
+    <!--@endif-->
 
     function onClickDarkThemeToggle(e) {
         const isDarkTheme = getColorScheme() === 'dark';
