@@ -40,6 +40,7 @@
         links.forEach(link => {
             if (link.href.includes('/modules/board/skins/sketchbook5_MH/css/black.css')) {
                 link.parentNode.removeChild(link);
+                console.log('removeBoardDarkCss done')
             }
         });
     }
@@ -63,9 +64,11 @@
             newLink.rel = 'stylesheet';
             newLink.href = '/modules/board/skins/sketchbook5_MH/css/black.css?t=1717684666';
             boardCssLink.parentNode.insertBefore(newLink, boardCssLink.nextSibling);
+            console.log('addBoardDarkCss done')
         }
     }
 
+    console.log('{\Rhymix\Framework\UA::getColorScheme()}')
     <!--@if(\Rhymix\Framework\UA::getColorScheme() === 'auto')-->
     window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e) {
         if (e.matches) {
