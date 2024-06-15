@@ -21,6 +21,8 @@ $header-height: 52px;
     display: block;
     padding-top: 1.25rem;
     padding-bottom: $header-height;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -43,12 +45,12 @@ $header-height: 52px;
   &--with-aside {
     max-width: 80%;
     flex-basis: 80%;
-    margin-right: 2rem;
+    margin-left: 2rem;
 
     @include mobile() {
       max-width: 100%;
       flex-basis: 100%;
-      margin-right: 0;
+      margin-left: 0;
     }
   }
 
