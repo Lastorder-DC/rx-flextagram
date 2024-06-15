@@ -13,7 +13,6 @@ $header-height: 52px;
 }
 
 .app-main {
-<<<<<<< HEAD
  display: flex;
  padding-top: 2rem;
  padding-bottom: 2rem;
@@ -46,73 +45,6 @@ $header-height: 52px;
   max-width: 80%;
   flex-basis: 80%;
   margin-left: 2rem;
-=======
-  display: flex;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  
-  @include mobile() {
-    display: block;
-    padding-top: 1.25rem;
-    padding-bottom: $header-height;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-.app-content {
-  max-width: 100%;
-  flex-basis: 100%;
-  zoom: 1;
-  
-
-  &:before,
-  &:after {
-    content: "";
-    display: table;
-  }
-  &::after {
-    clear: both;
-  }
-
-
-  &--with-aside {
-    max-width: 80%;
-    flex-basis: 80%;
-    margin-left: 2rem;
-
-    @include mobile() {
-      max-width: 100%;
-      flex-basis: 100%;
-      margin-left: 0;
-    }
-  }
-
-
-  &--light,
-  & > .x,
-  & > .xm,
-  & > .xc,
-  & > .xl {
-    max-width: $base-container;
-    padding: $base-padding;
-    margin: 1.5rem auto;
-
-    color: black;
-    background-color: white;
-    border-radius: $border-radius-2;
-  }
-
-  &--tight,
-  & > .x,
-  & > .xm,
-  & > .xc,
-  & > .xl {
-    margin: 0 auto;
-    padding: 0;
-    border-radius: 0;
-  }
->>>>>>> d4bf1222c643c95771c9447953767fd39113a05e
 
   @include mobile() {
    max-width: 100%;
