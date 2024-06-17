@@ -5,7 +5,9 @@
     $is_mypage = $act == 'dispMemberInfo';
     $is_custom_page = $is_notifications && is_mypage && is_menu;
 }
-
+<!--
+{print_r($global_menu)}
+-->
 <nav class="app-header-nav" cond="!$global_menu->list && \Rhymix\Framework\Session::isAdmin()">
     <ul>
         <li><a href="{getUrl('','module','admin','act','dispLayoutAdminModify','layout_srl',$layout_info->layout_srl)}" target="_blank">메뉴가 지정되지 않음. 레이아웃 설정 바로가기</a></li>
