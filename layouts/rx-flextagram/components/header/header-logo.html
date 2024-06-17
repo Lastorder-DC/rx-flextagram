@@ -6,16 +6,6 @@
     endif;
 
     $header_logo_contrast = $layoutConfig['logo_img_contrast'] === 'Y' ? 'app-header-logo--contrast' : null;
-
-    foreach($global_menu->list as $list):
-        if(strpos($list['href'], "/yeokka") !== FALSE):
-            $layoutConfig['logo_img'] = "/layouts/rx-flextagram/assets/images/yeokka_logo.png";
-            $layoutConfig['logo_img_dark'] = $layoutConfig['logo_img'];
-
-            $layoutConfig['logo_text'] = "여까";
-            break;
-        endif;
-    endforeach;
 }
 
 <a class="app-header-logo {$header_logo_contrast}" href="{$header_url}">
