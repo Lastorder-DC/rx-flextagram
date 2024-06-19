@@ -31,6 +31,9 @@ $header-height: 52px;
  max-width: 100%;
  flex-basis: 100%;
  zoom: 1;
+ padding: 20px;
+ background: var(--color-gray-200);
+ border-radius: 20px;
  
 
  &:before,
