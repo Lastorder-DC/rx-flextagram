@@ -1,6 +1,50 @@
 <load target="^/modules/sociallogin/skins/default/css/default.css" />
 <load target="login.scss" vars="RxFlextagramTheme::$variables" />
 
+<form class="app-login" ruleset="@login" action="{getUrl()}" method="post">
+    <input type="hidden" name="success_return_url" value="{$referer_url}" />
+    <input type="hidden" name="act" value="procMemberLogin" />
+    <input type="hidden" name="xe_validator_id" value="layouts/rx-flextagram" />
+
+    {@ $identifier = RxFlextagramTheme::loginIdentifier(); }
+    <input
+        class="app-input app-expand"
+        type="<!--@if(!is_array($identifier['field']) && $identifier['field'] === 'email_address')-->email<!--@else-->text<!--@end-->"
+        name="user_id"
+        placeholder="{$identifier['title']}"
+        required
+        tabindex="1"
+        autocomplete="<!--@if(!is_array($identifier['field']) && $identifier['field'] === 'email_address')-->email<!--@else-->id<!--@end-->"
+    />
+
+    <input class="app-input app-expand" type="password" name="password" placeholder="비밀번호" required tabindex="2" autocomplete="current-password" />
+
+    <div class="app-login-options">
+        <input
+            class="app-checkbox"
+            type="checkbox"
+            name="keep_signed"
+            id="keepid-optn"
+            data-lang="{$lang->about_keep_warning}"
+            value="Y"
+            tabindex="3"
+        />
+        <label for="keepid-optn">로그인 상태 유지</label>
+
+        <div class="app-login-options__divider"></div>
+
+        <!-- prettier-ignore -->
+        <a class="app-link" href="{getUrl('act','dispMemberFindAccount')}" tabindex="5">{$lang->cmd_find_member_account}</a>
+    </div>
+
+    <button type="submit" class="app-button app-expand app-primary app-plain" tabindex="4">로그인</button>
+</form>
+
+<div class="app-login__register-message">
+    <span>아직 회원이 아니신가요?</span>
+    <a href="{getUrl('act','dispMemberSignUpForm')}" class="app-link app-primary" tabindex="6">회원가입 하기</a>
+</div>
+
 <!--// 소셜XE 로그인  -->
 <!-- prettier-ignore -->
 <div cond="\Rhymix\Modules\Sociallogin\Models\Config::isEnabled()" class="app-sociapp-login-group">
