@@ -102,11 +102,6 @@ $header-height: 52px;
     }
    }
 
-   &:hover {
-    color: $color-gray-700;
-    color: var(--color-gray-700);
-   }
-   
    span.noti-badge {
     background-color: red;
     margin-left: 5px;
@@ -114,6 +109,16 @@ $header-height: 52px;
     border-radius: 5px;
 
     &:hover {
+     color: $color-gray-900;
+     color: var(--color-gray-900);
+    }
+   }
+
+   &:hover {
+    color: $color-gray-700;
+    color: var(--color-gray-700);
+
+    span.noti-badge {
      color: $color-gray-900;
      color: var(--color-gray-900);
     }
