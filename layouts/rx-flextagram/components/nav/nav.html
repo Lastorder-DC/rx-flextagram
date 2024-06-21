@@ -49,6 +49,21 @@
             </a>
         </li>
 
+        {@
+            if($logged_info) $noti_count = getModel('ncenterlite')->_getNewCount($logged_info->member_srl);
+            else $noti_count = 0;
+
+            if($noti_count>99) $noti_count = "99+";
+        }
+
+        <li cond="$layoutConfig['use_ncenter_widget'] === 'Y' && $logged_info">
+            <a href="{getUrl('', 'mid', $mid, 'act','dispNcenterliteNotifyList')}">
+                <block cond="$noti_count"><ion-icon name="notifications"></ion-icon></block>
+                <block cond="!$noti_count"><ion-icon name="notifications-outline"></ion-icon></block>
+            </a>
+            <span class="noti-badge" cond="$noti_count">{$noti_count}</span>
+        </li>
+
         <include target="../sidebar/sidebar-toggle.html" />
     </ul>
 </nav>

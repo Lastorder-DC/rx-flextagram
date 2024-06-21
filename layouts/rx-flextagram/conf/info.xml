@@ -165,6 +165,18 @@
                     <title xml:lang="ko">표시 안함</title>
                 </options>
             </var>
+
+            <var name="use_ncenter_widget" type="radio">
+                <title xml:lang="ko">알림 갯수 표시</title>
+                <description xml:lang="ko">메뉴에 알림 갯수를 표시할지 설정합니다.</description>
+
+                <options value="N">
+                    <title xml:lang="ko">표시 안함 (기본값)</title>
+                </options>
+                <options value="Y">
+                    <title xml:lang="ko">표시 함</title>
+                </options>
+            </var>
         </group>
 
         <group>
