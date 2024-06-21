@@ -31,6 +31,7 @@ class RxFlextagramTheme
             'board_thumbnail' => $layout_info->board_thumbnail ?? 'N',
             'use_aside' => $layout_info->use_aside ?? 'Y',
             'aside_content' => $layout_info->aside_content ?? null,
+            'use_ncenter_widget' => $layout_info->use_ncenter_widget ?? 'N',
         ];
 
         return self::$config;

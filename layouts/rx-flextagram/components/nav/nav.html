@@ -56,7 +56,7 @@
             if($noti_count>99) $noti_count = "99+";
         }
 
-        <li cond="$layoutConfig['use_ncenter_widget'] === 'Y' && $logged_info">
+        <li cond="$layoutConfig['use_ncenter_widget'] == 'Y' && $logged_info">
             <a href="{getUrl('', 'mid', $mid, 'act','dispNcenterliteNotifyList')}">
                 <block cond="$noti_count"><ion-icon name="notifications"></ion-icon></block>
                 <block cond="!$noti_count"><ion-icon name="notifications-outline"></ion-icon></block>
