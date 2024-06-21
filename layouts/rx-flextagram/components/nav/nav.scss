@@ -90,13 +90,6 @@ $header-height: 52px;
     --ionicon-stroke-width: 1.75rem;
    }
 
-   span.noti-badge {
-    background-color: red;
-    margin: 5px;
-    padding: 2px 5px;
-    border-radius: 5px;
-   }
-
    .app-header-nav-more {
     color: $color-gray-400;
     color: var(--color-gray-400);
@@ -112,6 +105,18 @@ $header-height: 52px;
    &:hover {
     color: $color-gray-700;
     color: var(--color-gray-700);
+   }
+   
+   span.noti-badge {
+    background-color: red;
+    margin-left: 5px;
+    padding: 2px 5px;
+    border-radius: 5px;
+
+    &:hover {
+     color: $color-gray-900;
+     color: var(--color-gray-900);
+    }
    }
   }
 
