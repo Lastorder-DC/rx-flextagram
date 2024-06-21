@@ -60,8 +60,8 @@
             <a href="{getUrl('', 'mid', $mid, 'act','dispNcenterliteNotifyList')}">
                 <block cond="$noti_count"><ion-icon name="notifications"></ion-icon></block>
                 <block cond="!$noti_count"><ion-icon name="notifications-outline"></ion-icon></block>
+                <span class="noti-badge" cond="$noti_count">{$noti_count}</span>
             </a>
-            <span class="noti-badge" cond="$noti_count">{$noti_count}</span>
         </li>
 
         <include target="../sidebar/sidebar-toggle.html" />
