@@ -57,7 +57,7 @@
         }
 
         <li cond="$layoutConfig['use_ncenter_widget'] == 'Y' && $logged_info">
-            <a href="{getUrl('', 'mid', $mid, 'act','dispNcenterliteNotifyList')}">
+            <a href="{getUrl('', 'mid', $mid, 'act','dispNcenterliteNotifyList')}" class="app-header-nav-icon app-tooltip" title="알림 목록">
                 <span id="noti-yes" style="display:none"|cond="!$noti_count"><ion-icon name="notifications" aria-label="알림 목록"></ion-icon></span>
                 <span id="noti-no" style="display:none"|cond="$noti_count"><ion-icon name="notifications-outline" aria-label="알림 목록"></ion-icon></span>
                 <span class="noti-badge" onclick="exec_xml('ncenterlite', 'procNcenterliteNotifyReadAll'); this.remove(); document.getElementById('noti-yes').style.display = 'none'; document.getElementById('noti-no').style.display = 'block'; return false;" cond="$noti_count">{$noti_count}</span>
