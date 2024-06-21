@@ -8,11 +8,11 @@
 
   <div cond="$grant->manager" class="app-button-group">
     <a class="app-button app-sm app-tooltip" title="{$lang->cmd_management}" cond="$grant->manager" href="{getUrl('act','dispBoardAdminBoardInfo')}">
-      <ion-icon name="settings-outline"></ion-icon>
+      <ion-icon name="settings-outline" aria-label="{$lang->cmd_management}"></ion-icon>
     </a>
   
     <a class="app-button app-sm  app-tooltip" title="{$lang->cmd_manage_document}" cond="$grant->manager" href="{getUrl('','module','document','act','dispDocumentManageDocument')}" onclick="popopen(this.href,'manageDocument'); return false;">
-      <ion-icon name="checkmark-done-outline"></ion-icon>
+      <ion-icon name="checkmark-done-outline" aria-label="{$lang->cmd_manage_document}"></ion-icon>
     </a>
   </div>
 
@@ -31,6 +31,6 @@
 
   {@ // 글쓰기 버튼 }
     <a cond="$grant->write_document" href="{getUrl('act','dispBoardWrite','document_srl','')}" class="app-write-button app-tooltip" title="{$lang->cmd_write}">
-      <ion-icon name="add-outline"></ion-icon>
+      <ion-icon name="add-outline" aria-label="{$lang->cmd_write}"></ion-icon>
     </a>
 </div>

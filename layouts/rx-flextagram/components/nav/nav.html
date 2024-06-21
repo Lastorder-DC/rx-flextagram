@@ -22,11 +22,11 @@
             <li  class="active"|cond="$is_selected" is-divider|cond="$val1['link'] == '/'">
                 <!-- prettier-ignore -->
                 <a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'" class="app-header-nav-icon app-tooltip"|cond="$val1['icon']" title="{strip_tags($val1['link'])}"|cond="$val1['icon']">
-                    <ion-icon cond="$val1['icon'] && $is_selected" name="{$val1['icon']}"></ion-icon>
-                    <ion-icon cond="$val1['icon'] && !$is_selected" name="{$val1['icon']}-outline"></ion-icon>
+                    <ion-icon cond="$val1['icon'] && $is_selected" name="{$val1['icon']}" aria-label="{$val1['link']}"></ion-icon>
+                    <ion-icon cond="$val1['icon'] && !$is_selected" name="{$val1['icon']}-outline" aria-label="{$val1['link']}"></ion-icon>
     
                     <span cond="!$val1['icon']">{$val1['link']}</span>
-                    <ion-icon cond="$val1['list']" name="chevron-down-outline" class="app-header-nav-more"></ion-icon>
+                    <ion-icon cond="$val1['list']" name="chevron-down-outline" class="app-header-nav-more" aria-hidden="true"></ion-icon>
                 </a>
     
                 <ul cond="$val1['list']" class="app-header-nav-child">
@@ -34,8 +34,8 @@
                     <li loop="$val1['list']=>$key2,$val2" class="active"|cond="$val2['selected']" is-divider|cond="$val2['link'] == '/'">
                         <!-- prettier-ignore -->
                         <a href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'">
-                            <ion-icon cond="$val2['icon'] && $is_selected" name="{$val2['icon']}"></ion-icon>
-                            <ion-icon cond="$val2['icon'] && !$is_selected" name="{$val2['icon']}-outline"></ion-icon>
+                            <ion-icon cond="$val2['icon'] && $is_selected" name="{$val2['icon']}" aria-label="{$val2['link']}"></ion-icon>
+                            <ion-icon cond="$val2['icon'] && !$is_selected" name="{$val2['icon']}-outline" aria-label="{$val2['link']}"></ion-icon>
                             <span>{$val2['link']}</span>
                         </a>
                     </li>
@@ -45,7 +45,7 @@
         
         <li cond="$layoutConfig['header_search'] === 'Y'">
             <a onclick="toggleDialog('app-search-form')">
-                <ion-icon name="search-outline"></ion-icon>
+                <ion-icon name="search-outline" aria-label="{$lang->search}"></ion-icon>
             </a>
         </li>
 
@@ -58,8 +58,8 @@
 
         <li cond="$layoutConfig['use_ncenter_widget'] == 'Y' && $logged_info">
             <a href="{getUrl('', 'mid', $mid, 'act','dispNcenterliteNotifyList')}">
-                <block cond="$noti_count"><ion-icon name="notifications"></ion-icon></block>
-                <block cond="!$noti_count"><ion-icon name="notifications-outline"></ion-icon></block>
+                <block cond="$noti_count"><ion-icon name="notifications" aria-label="알림 목록"></ion-icon></block>
+                <block cond="!$noti_count"><ion-icon name="notifications-outline" aria-label="알림 목록"></ion-icon></block>
                 <span class="noti-badge" cond="$noti_count">{$noti_count}</span>
             </a>
         </li>

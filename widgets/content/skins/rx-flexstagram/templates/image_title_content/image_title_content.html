@@ -8,7 +8,7 @@
         <div class="app-thumbnail" cond="in_array('thumbnail', $widget_info->option_view_arr)">
           <img cond="$item->getThumbnail()" src="{$item->getThumbnail()}" alt="thumbnail">
           <div class="app-thumbnail-empty" cond="!$item->getThumbnail()">
-            <ion-icon name="document-text-outline"></ion-icon>
+            <ion-icon name="document-text-outline" aria-hidden="true"></ion-icon>
           </div>
         </div>
 

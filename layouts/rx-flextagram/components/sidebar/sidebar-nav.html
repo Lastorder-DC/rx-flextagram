@@ -4,8 +4,8 @@
       <div class="app-sidebar-nav-item">
           <!-- prettier-ignore -->
           <a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'" title="{strip_tags($val1['link'])}">
-              <ion-icon cond="$val1['icon'] && $val1['selected']" name="{$val1['icon']}"></ion-icon>
-              <ion-icon cond="$val1['icon'] && !$val1['selected']" name="{$val1['icon']}-outline"></ion-icon>
+              <ion-icon cond="$val1['icon'] && $val1['selected']" name="{$val1['icon']}" aria-label="{$val1['link']}"></ion-icon>
+              <ion-icon cond="$val1['icon'] && !$val1['selected']" name="{$val1['icon']}-outline" aria-label="{$val1['link']}"></ion-icon>
               <span>{$val1['link']}</span>
           </a>
 
@@ -19,7 +19,7 @@
               <li loop="$val1['list'] => $key2, $val2" class="active"|cond="$val2['selected']" is-divider|cond="$val2['link'] == '/'">
                   <!-- prettier-ignore -->
                   <a href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'">
-                      <ion-icon cond="$val2['icon']" name="{$val2['icon']}"></ion-icon>
+                      <ion-icon cond="$val2['icon']" name="{$val2['icon']}" aria-label="{$val2['link']}"></ion-icon>
                       <span>{$val2['link']}</span>
                   </a>
               </li>

@@ -18,14 +18,14 @@
       <ul>
         <li>
           <a href="{getUrl('act','dispBoardWrite','document_srl',$oDocument->document_srl,'comment_srl','')}">
-            <ion-icon name="create-outline"></ion-icon>
+            <ion-icon name="create-outline" aria-hidden="true"></ion-icon>
             {$lang->cmd_modify}
           </a>
         </li>
   
         <li>
           <a onclick="onClickDocumentDelete('{$oDocument->document_srl}', '{sprintf($lang->comfirm_act_msg,$lang->document,$lang->cmd_delete,$lang->msg_rul)}')">
-            <ion-icon name="trash-outline"></ion-icon>
+            <ion-icon name="trash-outline" aria-hidden="true"></ion-icon>
             {$lang->cmd_delete}
           </a>
         </li>

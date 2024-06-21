@@ -13,7 +13,7 @@
               <!--@if($document->getProfileImage())-->
                 <img src="{$document->getProfileImage()}" alt="{$document->getNickName()}" />
               <!--@else-->
-                <ion-icon name="person-outline"></ion-icon>
+                <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
               <!--@end-->
             </div>
             
@@ -47,7 +47,7 @@
           <div class="app-board-item__icons">
             <a class="app-board-item__icons-item">
               <div class="app-icon app-like app-tooltip" title="좋아요">
-                <ion-icon name="heart-outline"></ion-icon>
+                <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
               </div>
   
               <span cond="$document->get('voted_count') > 0">{$document->get('voted_count')}</span>
@@ -55,7 +55,7 @@
             
             <a href="{$document_link}#comment" class="app-board-item__icons-item">
               <div class="app-icon app-tooltip" title="댓글">
-                <ion-icon name="chatbubble-outline"></ion-icon>
+                <ion-icon name="chatbubble-outline" aria-hidden="true"></ion-icon>
               </div>
   
               <span cond="$document->get('comment_count') > 0">{$document->get('comment_count')}</span>

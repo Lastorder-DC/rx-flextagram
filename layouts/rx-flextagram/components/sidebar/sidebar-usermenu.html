@@ -2,7 +2,7 @@
     <li cond="$logged_info->is_admin == 'Y'">
         <div class="app-sidebar-nav-item">
             <a href="{getUrl('', 'module', 'admin')}" target="_blank" title="{$lang->cmd_management}">
-                <ion-icon name="settings-outline"></ion-icon>
+                <ion-icon name="settings-outline" aria-hidden="true"></ion-icon>
                 <span>{$lang->cmd_management}</span>
             </a>
         </div>
@@ -14,7 +14,7 @@
                 href="{getUrl('','module','admin','act','dispLayoutAdminModify','layout_srl',$layout_info->layout_srl)}"
                 onclick="window.open(this.href);return false;"
             >
-                <ion-icon name="hammer-outline"></ion-icon>
+                <ion-icon name="hammer-outline" aria-hidden="true"></ion-icon>
                 <span>레이아웃 설정</span>
             </a>
         </div>
@@ -25,7 +25,7 @@
                 href="{getUrl('','module','admin','act','dispMenuAdminSiteMap')}"
                 onclick="window.open(this.href);return false;"
             >
-                <ion-icon name="list-outline"></ion-icon>
+                <ion-icon name="list-outline" aria-hidden="true"></ion-icon>
                 <span>사이트 메뉴 편집</span>
             </a>
         </div>
@@ -37,7 +37,7 @@
                 target="_blank"
                 onclick="window.open(this.href);return false;"
             >
-                <ion-icon name="code-slash-outline"></ion-icon>
+                <ion-icon name="code-slash-outline" aria-hidden="true"></ion-icon>
                 <span>위젯코드 생성</span>
             </a>
         </div>
@@ -51,15 +51,15 @@
         <li>
             <div class="app-sidebar-nav-item">
                 <a href="{getUrl('act', 'dispMemberInfo','member_srl','')}">
-                    <ion-icon name="person-outline"></ion-icon>
-                    <span>마이페이지</span>
+                    <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+                    <span>마이 페이지</span>
                 </a>
             </div>
         </li>
         <li>
             <div class="app-sidebar-nav-item">
                 <a href="{getUrl('act', 'dispMemberScrappedDocument', 'page','')}">
-                    <ion-icon name="bookmark-outline"></ion-icon>
+                    <ion-icon name="bookmark-outline" aria-hidden="true"></ion-icon>
                     <span>스크랩</span>
                 </a>
             </div>
@@ -68,8 +68,8 @@
         <li>
             <div class="app-sidebar-nav-item">
                 <a href="{getUrl('act', 'dispMemberOwnDocument', 'page','')}">
-                    <ion-icon name="document-text-outline"></ion-icon>
-                    <span>작성글</span>
+                    <ion-icon name="document-text-outline" aria-hidden="true"></ion-icon>
+                    <span>작성 글</span>
                 </a>
             </div>
         </li>
@@ -77,8 +77,8 @@
         <li>
            <div class="app-sidebar-nav-item">
                 <a href="{getUrl('act', 'dispMemberOwnComment ', 'page','')}">
-                    <ion-icon name="chatbox-ellipses-outline"></ion-icon>
-                    <span>작성댓글</span>
+                    <ion-icon name="chatbox-ellipses-outline" aria-hidden="true"></ion-icon>
+                    <span>작성 댓글</span>
                 </a>
            </div>
         </li>
@@ -87,8 +87,8 @@
     <li cond="$layoutConfig['color_scheme']">
         <div class="app-sidebar-nav-item">
             <a onClick="onClickDarkThemeToggle()">
-                <ion-icon class="app-hidden--light" name="sunny-outline"></ion-icon>
-                <ion-icon class="app-hidden--dark" name="moon-outline"></ion-icon>
+                <ion-icon class="app-hidden--light" name="sunny-outline" aria-hidden="true"></ion-icon>
+                <ion-icon class="app-hidden--dark" name="moon-outline" aria-hidden="true"></ion-icon>
 
                 <span class="app-hidden--light">라이트 모드</span>
                 <span class="app-hidden--dark">어두운 모드</span>

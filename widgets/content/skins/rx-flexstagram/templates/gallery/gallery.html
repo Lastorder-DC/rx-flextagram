@@ -9,7 +9,7 @@
       <a href="{$item->getLink()}" target="_blank"|cond="$widget_info->new_window">
         <img cond="$item->getThumbnail()" src="{$item->getThumbnail()}" alt="{str_replace(array('&amp;amp;','&amp;lt;','&amp;gt;','&amp;quot;','&amp;apos;'),array('&amp;','&lt;','&gt;','&quot;','&apos;'),$item->getTitle($widget_info->subject_cut_size))}">
 
-        <ion-icon cond="!$item->getThumbnail()" name="image-outline"></ion-icon>
+        <ion-icon cond="!$item->getThumbnail()" name="image-outline" aria-hidden="true"></ion-icon>
       </a>
     </li>
   </ul>

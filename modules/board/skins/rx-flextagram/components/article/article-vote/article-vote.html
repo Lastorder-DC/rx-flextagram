@@ -10,9 +10,9 @@
     <a class="app-article-toolbar__item app--is-vote app-tooltip {$voteActiveClassName}" title="좋아요" data-type="up" onclick="alArticleVote(this)">
       <div class="app-icon">
         <!--@if($isMyVoted)-->
-          <ion-icon name="heart"></ion-icon>
+          <ion-icon name="heart" aria-hidden="true"></ion-icon>
         <!--@else-->
-          <ion-icon name="heart-outline"></ion-icon>
+          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
         <!--@end-->
       </div>
       <span class="app-article-vote__count">
@@ -30,9 +30,9 @@
       <a class="app-article-toolbar__item app--is-blame app-tooltip {$blameActiveClassName}" title="싫어요" data-type="down" onclick="alArticleVote(this)">
         <div class="app-icon">
           <!--@if($isMyBlamed)-->
-            <ion-icon name="heart-dislike"></ion-icon>
+            <ion-icon name="heart-dislike" aria-hidden="true"></ion-icon>
           <!--@else-->
-            <ion-icon name="heart-dislike-outline"></ion-icon>
+            <ion-icon name="heart-dislike-outline" aria-hidden="true"></ion-icon>
           <!--@end-->
         </div>
 

@@ -4,7 +4,7 @@
 
   <a href="#comment" class="app-article-toolbar__item app-tooltip" title="{$lang->comment}">
     <div class="app-icon">
-      <ion-icon name="chatbubble-outline"></ion-icon>
+      <ion-icon name="chatbubble-outline aria-hidden="true"></ion-icon>
     </div>
 
     <span>{$oDocument->getCommentcount()}</span> 
@@ -12,7 +12,7 @@
 
   <a id="share-article" class="app-article-toolbar__item app-tooltip" title="공유" onclick="onClickShare()">
     <div class="app-icon">
-      <ion-icon name="share-outline"></ion-icon>
+      <ion-icon name="share-outline" aria-hidden="true"></ion-icon>
     </div>
   </a>
 
@@ -21,7 +21,7 @@
   {@ // 스크랩 }
   <a cond="$is_logged" title="스크랩" href="javascript:doCallModuleAction('member','procMemberScrapDocument',{$document_srl})" class="app-article-toolbar__item app-tooltip">
     <div class="app-icon">
-      <ion-icon name="bookmark-outline"></ion-icon>
+      <ion-icon name="bookmark-outline" aria-hidden="true"></ion-icon>
     </div>
   </a>
 </div>

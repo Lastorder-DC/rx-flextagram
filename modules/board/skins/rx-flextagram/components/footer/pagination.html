@@ -15,7 +15,7 @@
 
     <li cond="$page > $prev_page" class="app-pagination-prev">
       <a href="{getUrl('page','$prev_page','document_srl','','division',$division,'last_division',$last_division)}" >
-        <ion-icon name="chevron-back-outline"></ion-icon>
+        <ion-icon name="chevron-back-outline" aria-hidden="true"></ion-icon>
       </a>
     </li>
 
@@ -27,7 +27,7 @@
 
     <li cond="$page < $next_page" class="app-pagination-next">
       <a href="{getUrl('page',$next_page,'document_srl','','division',$division,'last_division',$last_division)}">
-        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
       </a>
     </li>
   </ul>

@@ -26,7 +26,7 @@
       <!-- <block cond="$val->document_count">
         ({$val->document_count})
       </block> -->
-      <ion-icon name="chevron-down-outline" class="tw-text-gray-700 tw-ml-2" cond="count($val->children)"></ion-icon>
+      <ion-icon name="chevron-down-outline" class="tw-text-gray-700 tw-ml-2" cond="count($val->children)" aria-hidden="true"></ion-icon>
     </a>
 
     <div class="app-category-child" cond="count($val->children)">
@@ -44,7 +44,7 @@
   </li>
 
   <a class="app-category-search app-tooltip" title="{$lang->cmd_search}" onclick="toggleDialog('app-board-search')">
-    <ion-icon name="search-outline"></ion-icon>
+    <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
   </a>
 </ul>
 <!--@end-->
