@@ -57,11 +57,14 @@
                     endif;
 
                     $api_url .= "?streamerID=" . $streamerID . "&style=" . $on_style . "&offstyle=" . $off_style . "&filename=live.css";
+                    $js_api_url .= "?streamerID=" . $streamerID . "&callback=changeLiveBadge&filename=live.js";
                     debugPrint($api_url);
+                    debugPrint($js_api_url);
                 }
 
                 <script>
                     refreshStylesheet('{$api_url}', 120000);
+                    refreshJSONP('{$js_api_url}', 120000);
                 </script>
                 <!-- prettier-ignore -->
                 <a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'" class="app-header-nav-icon app-tooltip" title="{strip_tags($val1['link'])}">
