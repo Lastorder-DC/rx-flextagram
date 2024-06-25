@@ -20,7 +20,7 @@
                 $is_selected = $val1['selected'] && !$is_custom_page;
                 debugPrint(strpos('live-api', $val1['href'], 0));
             }
-            <li class="active"|cond="$is_selected" is-divider|cond="$val1['link'] == '/'" cond="strpos('live-api', $val1['href'], 0) === FALSE">
+            <li class="active"|cond="$is_selected" is-divider|cond="$val1['link'] == '/'" cond="strpos('live-api', $val1['href'], 0) === false">
                 <!-- prettier-ignore -->
                 <a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'" class="app-header-nav-icon app-tooltip"|cond="$val1['icon']" title="{strip_tags($val1['link'])}"|cond="$val1['icon']">
                     <ion-icon cond="$val1['icon'] && $is_selected" name="{$val1['icon']}" aria-label="{$val1['link']}"></ion-icon>
@@ -43,7 +43,7 @@
                 </ul>
             </li>
 
-            <li class="active"|cond="$is_selected" is-divider|cond="$val1['link'] == '/'" cond="strpos('live-api', $val1['href'], 0) !== FALSE">
+            <li class="active"|cond="$is_selected" is-divider|cond="$val1['link'] == '/'" cond="strpos('live-api', $val1['href'], 0) !== false">
                 <load target="{$val1['href']}" />
                 <!-- prettier-ignore -->
                 <a href="http://yeokka.com/" target="_blank"|cond="$val1['open_window']=='Y'" class="app-header-nav-icon app-tooltip" title="{strip_tags($val1['link'])}">
