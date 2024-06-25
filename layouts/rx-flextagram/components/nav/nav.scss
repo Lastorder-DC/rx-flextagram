@@ -211,17 +211,21 @@ $header-height: 52px;
     color: $color-primary;
    }
   }
-
-  &#broadcast-on {
-    display: none;
-
-    & > i,
-    & > ion-icon {
-    color: red;
-   }
-  }
  }
 }
+
+span#broadcast-on {
+ display: none;
+
+ & > i,
+ & > ion-icon {
+  color: red;
+ }
+}
+
+span#broadcast-off {
+  display: none;
+ }
 
 .app-header-nav-child {
  opacity: 0;
