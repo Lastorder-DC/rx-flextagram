@@ -177,6 +177,21 @@
                     <title xml:lang="ko">표시 함</title>
                 </options>
             </var>
+
+            <var name="chzzk_def_streamerid" type="text">
+                <title xml:lang="ko">치지직 기본 스트리머 아이디</title>
+                <description xml:lang="ko">메뉴 설명 부분에 미지정시 사용할 기본 스트리머 아이디를 지정합니다.</description>
+            </var>
+
+            <var name="chzzk_online_style" type="textarea">
+                <title xml:lang="ko">치지직 온라인 뱃지 CSS</title>
+                <description xml:lang="ko">치지직 방송 온라인시 사용할 CSS를 지정합니다.</description>
+            </var>
+
+            <var name="chzzk_offline_style" type="textarea">
+                <title xml:lang="ko">치지직 오프라인 뱃지 CSS</title>
+                <description xml:lang="ko">치지직 방송 오프라인시 사용할 CSS를 지정합니다.</description>
+            </var>
         </group>
 
         <group>

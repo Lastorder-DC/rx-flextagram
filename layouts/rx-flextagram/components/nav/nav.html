@@ -5,8 +5,10 @@
     $is_notifications = $tab == 'notifications';
     $is_mypage = $act == 'dispMemberInfo';
     $is_custom_page = $is_notifications && is_mypage && is_menu;
-    $on_style = "c3BhbiNicm9hZGNhc3Qtb24gewogICAgZGlzcGxheTogYmxvY2s7Cn0KCnNwYW4jYnJvYWRjYXN0LW9mZiB7CiAgICBkaXNwbGF5OiBub25lOwp9";
-    $off_style = "bGkuYnJvYWRjYXN0IHsKICAgIGRpc3BsYXk6IG5vbmUgIWltcG9ydGFudDsKfQoKc3BhbiNicm9hZGNhc3Qtb24gewogICAgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50Owp9CgpzcGFuI2Jyb2FkY2FzdC1vZmYgewogICAgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50Owp9";
+
+    $api_url = "https://live-api.fanbinit.us/";
+    $on_style = $layoutConfig['chzzk_online_style'];
+    $off_style = $layoutConfig['chzzk_offline_style'];
 }
 
 <nav class="app-header-nav" cond="!$global_menu->list && \Rhymix\Framework\Session::isAdmin()">
@@ -48,14 +50,13 @@
             <li class="broadcast" id="broadcast-badge" style="display: none" is-divider|cond="$val1['link'] == '/'" cond="strpos($val1['desc'], 'chzzk', 0) !== false">
                 {@
                     $liveData = explode("|", $val1['desc']);
-                    $api_url = "https://live-api.fanbinit.us/";
-
                     if (count($liveData) > 1):
-                        $api_url .= "?streamerID=" . $liveData[1] . "&style=" . $on_style . "&offstyle=" . $off_style . "&filename=live.css";
+                        $streamerID = $liveData[1];
                     else:
-                        // |가 없을 경우 처리할 로직을 여기에 작성 (필요에 따라 다르게 처리)
-                        $api_url .= "?streamerID=3c9fe16c70cf2f4a5274fa69307f0f89&style=" . $on_style . "&offstyle=" . $off_style . "&filename=live.css";
+                        $streamerID = $layoutConfig['chzzk_def_streamerid'];
                     endif;
+
+                    $api_url .= "?streamerID=" . $streamerID . "&style=" . $on_style . "&offstyle=" . $off_style . "&filename=live.css";
                     debugPrint($api_url);
                 }
 

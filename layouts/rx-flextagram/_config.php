@@ -32,6 +32,9 @@ class RxFlextagramTheme
             'use_aside' => $layout_info->use_aside ?? 'Y',
             'aside_content' => $layout_info->aside_content ?? null,
             'use_ncenter_widget' => $layout_info->use_ncenter_widget ?? 'N',
+            'chzzk_def_streamerid' => $layout_info->chzzk_def_streamerid ?? "3c9fe16c70cf2f4a5274fa69307f0f89",
+            'chzzk_online_style' => base64_encode($layout_info->chzzk_online_style) ?? "c3BhbiNicm9hZGNhc3Qtb24gewogICAgZGlzcGxheTogYmxvY2s7Cn0KCnNwYW4jYnJvYWRjYXN0LW9mZiB7CiAgICBkaXNwbGF5OiBub25lOwp9",
+            'chzzk_offline_style' => base64_encode($layout_info->chzzk_offline_style) ?? "bGkuYnJvYWRjYXN0IHsKICAgIGRpc3BsYXk6IG5vbmUgIWltcG9ydGFudDsKfQoKc3BhbiNicm9hZGNhc3Qtb24gewogICAgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50Owp9CgpzcGFuI2Jyb2FkY2FzdC1vZmYgewogICAgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50Owp9",
         ];
 
         return self::$config;
