@@ -51,7 +51,6 @@ function refreshJSONP(url, interval) {
 }
 
 function changeLiveBadge(data) {
-    data = JSON.parse(data);
     if(data.status == "OPEN") {
         var badgeElement = document.getElementById('broadcast-badge');
         if (badgeElement && badgeElement.hasAttribute('style')) {
