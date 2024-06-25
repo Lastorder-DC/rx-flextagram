@@ -48,7 +48,33 @@
                     debugPrint("https://live-api.fanbinit.us/?streamerID=" . $liveData[1] . "&style=" . $liveData[2] . "&offstyle=" . $liveData[3] . "&filename=live.css");
                 }
 
-                {Context::addCSSFile("https://live-api.fanbinit.us/?streamerID=" . $liveData[1] . "&style=" . $liveData[2] . "&offstyle=" . $liveData[3] . "&filename=live.css")}
+                <script>
+                    function refreshStylesheet(url, interval) {
+                        let link = document.querySelector(`link[href="${url}"]`);
+                        
+                        if (!link) {
+                            link = document.createElement('link');
+                            link.rel = 'stylesheet';
+                            link.href = url;
+                            document.head.appendChild(link);
+                        }
+                        
+                        setInterval(() => {
+                            const newLink = document.createElement('link');
+                            newLink.rel = 'stylesheet';
+                            newLink.href = `${url}?t=${new Date().getTime()}`;
+
+                            newLink.onload = () => {
+                                link.parentNode.removeChild(link);
+                                link = newLink;
+                            };
+
+                            document.head.appendChild(newLink);
+                        }, interval);
+                    }
+                    
+                    refreshStylesheet('{"https://live-api.fanbinit.us/?streamerID=" . $liveData[1] . "&style=" . $liveData[2] . "&offstyle=" . $liveData[3] . "&filename=live.css"}', 60000);
+                </script>
                 <!-- prettier-ignore -->
                 <a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'" class="app-header-nav-icon app-tooltip" title="{strip_tags($val1['link'])}">
                     <span id="broadcast-on"><ion-icon name="videocam" aria-label="방송 켜짐"></ion-icon></span>
