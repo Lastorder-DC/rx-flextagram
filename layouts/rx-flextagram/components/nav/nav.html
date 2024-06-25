@@ -43,7 +43,7 @@
             </li>
 
             <li class="active"|cond="$is_selected" is-divider|cond="$val1['link'] == '/'" cond="strpos($val1['desc'], 'live-api', 0) !== false">
-                {$
+                {@
                     debugPrint({$val1['desc']});
                     Context::addCSSFile({$val1['desc']});
                 }
