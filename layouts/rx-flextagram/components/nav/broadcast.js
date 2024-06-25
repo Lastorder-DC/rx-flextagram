@@ -35,12 +35,6 @@ function refreshJSONP(url, interval) {
         script = document.createElement('script');
         script.src = url;
         document.head.appendChild(script);
-        script.onload = () => {
-            var element = document.getElementById('broadcast-badge');
-            if (element && element.hasAttribute('style')) {
-                element.removeAttribute('style');
-            }
-        };
     }
     
     setInterval(() => {
@@ -57,5 +51,26 @@ function refreshJSONP(url, interval) {
 }
 
 function changeLiveBadge(data) {
-    console.log(data);
+    if(data.status == "OPEN") {
+        var badgeElement = document.getElementById('broadcast-badge');
+        if (badgeElement && badgeElement.hasAttribute('style')) {
+            badgeElement.removeAttribute('style');
+        }
+
+        document.getElementById('broadcast-on').setAttribute("style", "display: block");
+        document.getElementById('broadcast-off').setAttribute("style", "display: none");
+
+        var badgeIconElement = document.getElementById('broadcast-icon');
+        var oldTitle = badgeIconElement.getAttribute("data-prepend");
+        badgeIconElement.setAttribute("title", oldTitle + " - " + data.liveTitle);
+        $('#broadcast-icon').tooltipster();
+    } else {
+        var badgeElement = document.getElementById('broadcast-badge');
+        if (badgeElement && !badgeElement.hasAttribute('style')) {
+            badgeElement.setAttribute("style", "display: none");
+        }
+
+        document.getElementById('broadcast-on').setAttribute("style", "display: none");
+        document.getElementById('broadcast-off').setAttribute("style", "display: none");
+    }
 }
