@@ -11,7 +11,7 @@ function refreshStylesheet(url, interval) {
     setInterval(() => {
         const newLink = document.createElement('link');
         newLink.rel = 'stylesheet';
-        newLink.href = `${url}?t=${new Date().getTime()}`;
+        newLink.href = `${url}&t=${new Date().getTime()}`;
 
         newLink.onload = () => {
             link.parentNode.removeChild(link);
