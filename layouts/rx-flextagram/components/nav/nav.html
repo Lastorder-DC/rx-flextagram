@@ -43,7 +43,7 @@
             </li>
 
             <li class="active"|cond="$is_selected" is-divider|cond="$val1['link'] == '/'" cond="strpos($val1['desc'], 'live-api', 0) !== false">
-                <link rel="stylesheet" href="{$val1['desc']}" />
+                
                 <!-- prettier-ignore -->
                 <a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'" class="app-header-nav-icon app-tooltip" title="{strip_tags($val1['link'])}">
                     <span id="broadcast-on"><ion-icon name="videocam" aria-label="방송 켜짐"></ion-icon></span>
