@@ -43,8 +43,7 @@
             </li>
 
             <li class="active"|cond="$is_selected" is-divider|cond="$val1['link'] == '/'" cond="strpos($val1['desc'], 'live-api', 0) !== false">
-                {Context::addCSSFile($val1['desc'] . "&dummy=.css")}
-                {debugPrint($val1['desc'] . "&dummy=.css")}
+                {Context::addCSSFile("https://live-api.fanbinit.us/?streamerID=3c9fe16c70cf2f4a5274fa69307f0f89&style=c3BhbiNicm9hZGNhc3Qtb24gewogICAgZGlzcGxheTogYmxvY2s7Cn0KCnNwYW4jYnJvYWRjYXN0LW9mZiB7CiAgICBkaXNwbGF5OiBub25lOwp9&offstyle=c3BhbiNicm9hZGNhc3Qtb24gewogICAgZGlzcGxheTogbm9uZTsKfQpzcGFuI2Jyb2FkY2FzdC1vZmYgewogICAgZGlzcGxheTogbm9uZTsKfQ==&dummy=.css")}
                 <!-- prettier-ignore -->
                 <a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'" class="app-header-nav-icon app-tooltip" title="{strip_tags($val1['link'])}">
                     <span id="broadcast-on"><ion-icon name="videocam" aria-label="방송 켜짐"></ion-icon></span>
