@@ -5,6 +5,8 @@
     $is_notifications = $tab == 'notifications';
     $is_mypage = $act == 'dispMemberInfo';
     $is_custom_page = $is_notifications && is_mypage && is_menu;
+    $on_style = "3c9fe16c70cf2f4a5274fa69307f0f89|c3BhbiNicm9hZGNhc3Qtb24gewogICAgZGlzcGxheTogYmxvY2s7Cn0KCnNwYW4jYnJvYWRjYXN0LW9mZiB7CiAgICBkaXNwbGF5OiBub25lOwp9";
+    $off_style = "bGkuYnJvYWRjYXN0IHsKICAgIGRpc3BsYXk6IG5vbmUgIWltcG9ydGFudDsKfQoKc3BhbiNicm9hZGNhc3Qtb24gewogICAgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50Owp9CgpzcGFuI2Jyb2FkY2FzdC1vZmYgewogICAgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50Owp9";
 }
 
 <nav class="app-header-nav" cond="!$global_menu->list && \Rhymix\Framework\Session::isAdmin()">
@@ -43,14 +45,22 @@
                 </ul>
             </li>
 
-            <li class="broadcast" is-divider|cond="$val1['link'] == '/'" cond="strpos($val1['desc'], 'chzzk', 0) !== false">
+            <li class="broadcast" id="broadcast-badge" style="display: none" is-divider|cond="$val1['link'] == '/'" cond="strpos($val1['desc'], 'chzzk', 0) !== false">
                 {@
-                    $liveData = explode("|", "chzzk|3c9fe16c70cf2f4a5274fa69307f0f89|c3BhbiNicm9hZGNhc3Qtb24gewogICAgZGlzcGxheTogYmxvY2s7Cn0KCnNwYW4jYnJvYWRjYXN0LW9mZiB7CiAgICBkaXNwbGF5OiBub25lOwp9|bGkuYnJvYWRjYXN0IHsKICAgIGRpc3BsYXk6IG5vbmUgIWltcG9ydGFudDsKfQoKc3BhbiNicm9hZGNhc3Qtb24gewogICAgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50Owp9CgpzcGFuI2Jyb2FkY2FzdC1vZmYgewogICAgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50Owp9");
-                    debugPrint("https://live-api.fanbinit.us/?streamerID=" . $liveData[1] . "&style=" . $liveData[2] . "&offstyle=" . $liveData[3] . "&filename=live.css");
+                    $liveData = explode("|", $val1['desc']);
+                    $api_url = "https://live-api.fanbinit.us/";
+
+                    if (count($liveData) > 1):
+                        $api_url .= "?streamerID=" . $liveData[1] . "&style=" . $on_style . "&offstyle=" . $off_style . "&filename=live.css";
+                    else:
+                        // |가 없을 경우 처리할 로직을 여기에 작성 (필요에 따라 다르게 처리)
+                        $api_url .= "?streamerID=3c9fe16c70cf2f4a5274fa69307f0f89&style=" . $on_style . "&offstyle=" . $off_style . "&filename=live.css";
+                    endif;
+                    debugPrint($api_url);
                 }
 
                 <script>
-                    refreshStylesheet('{"https://live-api.fanbinit.us/?streamerID=" . $liveData[1] . "&style=" . $liveData[2] . "&offstyle=" . $liveData[3] . "&filename=live.css"}', 120000);
+                    refreshStylesheet('{$api_url}', 120000);
                 </script>
                 <!-- prettier-ignore -->
                 <a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'" class="app-header-nav-icon app-tooltip" title="{strip_tags($val1['link'])}">

@@ -6,6 +6,12 @@ function refreshStylesheet(url, interval) {
         link.rel = 'stylesheet';
         link.href = url;
         document.head.appendChild(link);
+        link.onload = () => {
+            var element = document.getElementById('broadcast-badge');
+            if (element && element.hasAttribute('style')) {
+                element.removeAttribute('style');
+            }
+        };
     }
     
     setInterval(() => {
