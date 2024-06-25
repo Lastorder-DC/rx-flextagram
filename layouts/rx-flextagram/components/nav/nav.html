@@ -17,7 +17,8 @@
         <!-- prettier-ignore -->
         <block loop="$global_menu->list=>$key1,$val1">
             {@
-                $is_selected = $val1['selected'] && !$is_custom_page
+                $is_selected = $val1['selected'] && !$is_custom_page;
+                debugPrint(strpos('live-api', $val1['href'], 0));
             }
             <li class="active"|cond="$is_selected" is-divider|cond="$val1['link'] == '/'" cond="strpos('live-api', $val1['href'], 0) === FALSE">
                 <!-- prettier-ignore -->
