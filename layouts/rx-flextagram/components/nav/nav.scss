@@ -11,7 +11,7 @@ $header-height: 52px;
   bottom: 0;
   left: 0;
   z-index: 100;
-  width: 100%;
+  width: 100vw;
   height: auto;
   min-height: $header-height;
   margin: 0;
@@ -41,11 +41,13 @@ $header-height: 52px;
  padding: 0;
  margin: 0;
  height: $header-height;
+ width: 100%;
 
  & > li {
   position: relative;
   height: $header-height;
   margin-right: 0.25rem;
+  max-width: calc(100vw/ 8);
 
   @media (max-width: $mobile-w) {
    flex: 1;
@@ -85,9 +87,14 @@ $header-height: 52px;
    vertical-align: middle;
    transition: 0.2s ease;
 
+   @media (max-width: $mobile-w) {
+    padding: min(5%, 0.75rem);
+   }
+
    i, ion-icon {
     font-size: 1.5rem;
     --ionicon-stroke-width: 1.75rem;
+    width: min(10vw, 24px);
    }
 
    .app-header-nav-more {
