@@ -1,5 +1,5 @@
 function refreshStylesheet(url, interval) {
-    let link = document.querySelector(`link[href="${url}"]`);
+    let link = document.querySelector(`link[href^="${url}"]`);
     
     if (!link) {
         link = document.createElement('link');
