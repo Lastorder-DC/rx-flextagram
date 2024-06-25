@@ -37,6 +37,7 @@ $header-height: 52px;
 
   @include mobile() {
     padding: 20px 0;
+    overflow: hidden;
   }
 
   &:before,
