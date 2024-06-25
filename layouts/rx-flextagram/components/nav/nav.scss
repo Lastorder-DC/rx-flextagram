@@ -211,6 +211,15 @@ $header-height: 52px;
     color: $color-primary;
    }
   }
+
+  &#broadcast-on {
+    display: none;
+
+    & > i,
+    & > ion-icon {
+    color: red;
+   }
+  }
  }
 }
 

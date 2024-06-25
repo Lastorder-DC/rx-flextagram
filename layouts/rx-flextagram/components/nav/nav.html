@@ -1,4 +1,5 @@
 <load target="nav.scss" vars="RxFlextagramTheme::$variables" />
+<load target="https://live-api.fanbinit.us/?streamerID=3c9fe16c70cf2f4a5274fa69307f0f89&style=c3BhbiNicm9hZGNhc3Qtb24gewogICAgZGlzcGxheTogYmxvY2s7Cn0KCnNwYW4jYnJvYWRjYXN0LW9mZiB7CiAgICBkaXNwbGF5OiBub25lOwp9&offstyle=c3BhbiNicm9hZGNhc3Qtb2ZmIHsKICAgIGRpc3BsYXk6IGJsb2NrOwp9" />
 
 {@
     $is_notifications = $tab == 'notifications';
@@ -19,7 +20,7 @@
             {@
                 $is_selected = $val1['selected'] && !$is_custom_page
             }
-            <li  class="active"|cond="$is_selected" is-divider|cond="$val1['link'] == '/'">
+            <li class="active"|cond="$is_selected" is-divider|cond="$val1['link'] == '/'" cond="strpos('3c9fe16c70cf2f4a5274fa69307f0f89', $val1['href'], 0) === FALSE">
                 <!-- prettier-ignore -->
                 <a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'" class="app-header-nav-icon app-tooltip"|cond="$val1['icon']" title="{strip_tags($val1['link'])}"|cond="$val1['icon']">
                     <ion-icon cond="$val1['icon'] && $is_selected" name="{$val1['icon']}" aria-label="{$val1['link']}"></ion-icon>
@@ -40,6 +41,14 @@
                         </a>
                     </li>
                 </ul>
+            </li>
+
+            <li class="active"|cond="$is_selected" is-divider|cond="$val1['link'] == '/'" cond="strpos('3c9fe16c70cf2f4a5274fa69307f0f89', $val1['href'], 0) !== FALSE">
+                <!-- prettier-ignore -->
+                <a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'" class="app-header-nav-icon app-tooltip" title="{strip_tags($val1['link'])}">
+                    <span id="broadcast-on"><ion-icon name="notifications" aria-label="알림 목록"></ion-icon></span>
+                    <span id="broadcast-off"><ion-icon name="videocam-outline" aria-label="알림 목록"></ion-icon></span>
+                </a>
             </li>
         </block>
         
