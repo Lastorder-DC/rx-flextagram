@@ -256,7 +256,12 @@ span#broadcast-off {
 .app-header-nav-m {
   position: relative;
   margin-left: 2.5rem;
+  margin-right: -2.5rem;
   height: 100%;
+
+  @media (max-width: $mobile-w) {
+    margin-right: 0px;
+  }
 }
 
 .app-header-nav-m > ul {
