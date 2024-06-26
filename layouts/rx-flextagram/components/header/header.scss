@@ -29,12 +29,6 @@ $header-height: 52px;
     border-bottom-color: var(--color-gray-100);
   }
 
-  @media (max-width: $mobile-w) {
-    position: absolute;
-    z-index: auto;
-    border-bottom: none;
-  }
-
   &__divider {
     flex: 1;
   }
