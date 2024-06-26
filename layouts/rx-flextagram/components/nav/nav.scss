@@ -254,119 +254,121 @@ span#broadcast-off {
 }
 
 .app-header-nav-m {
-  position: relative;
-  margin-left: 2.5rem;
-  margin-right: -0.75rem;
-  height: 100%;
+  display: none;
+
+  @media (max-width: $mobile-w) {
+    position: relative;
+    margin-left: 2.5rem;
+    margin-right: -0.75rem;
+    height: 100%;
+  }
 }
 
 .app-header-nav-m > ul {
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-  height: $header-height;
-  width: 100%;
-  justify-content: space-evenly;
+  display: none;
 
-  & > li {
-    position: relative;
+  @media (max-width: $mobile-w) {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
     height: $header-height;
-    margin-right: 0.25rem;
-    max-width: calc(100vw / 8);
+    width: 100%;
+    justify-content: space-evenly;
 
-    @media (max-width: $mobile-w) {
+    & > li {
+      position: relative;
+      height: $header-height;
+      margin-right: 0.25rem;
+      max-width: calc(100vw / 8);
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
       margin-right: 0;
-    }
 
-    &:last-child {
-      margin-right: 0;
-    }
-
-    &:not(.active) > a:hover {
-      color: #48f;
-    }
-
-    &.active > a {
-      color: #48f;
-    }
-
-    & > a {
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: $header-height;
-      padding: 0.75rem 0.75rem;
-
-      color: $color-gray-900;
-      color: var(--color-gray-900);
-      font-size: 1rem;
-      font-weight: 400;
-      text-decoration: none;
-      text-transform: uppercase;
-      vertical-align: middle;
-      transition: 0.2s ease;
-
-      @media (max-width: $mobile-w) {
-        padding: min(5%, 0.75rem);
+      &:last-child {
+        margin-right: 0;
       }
 
-      i,
-      ion-icon {
-        font-size: 1.5rem;
-        --ionicon-stroke-width: 1.75rem;
-        width: min(10vw, 24px);
+      &:not(.active) > a:hover {
+        color: #48f;
       }
 
-      .app-header-nav-more {
-        color: $color-gray-400;
-        color: var(--color-gray-400);
+      &.active > a {
+        color: #48f;
+      }
+
+      & > a {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: $header-height;
+        padding: 0.75rem 0.75rem;
+
+        color: $color-gray-900;
+        color: var(--color-gray-900);
         font-size: 1rem;
-        margin-left: 0.25rem;
-        --ionicon-stroke-width: 3rem;
+        font-weight: 400;
+        text-decoration: none;
+        text-transform: uppercase;
+        vertical-align: middle;
+        transition: 0.2s ease;
+        padding: min(5%, 0.75rem);
 
-        @media (max-height: $mobile-w) {
-          display: none;
+        i,
+        ion-icon {
+          font-size: 1.5rem;
+          --ionicon-stroke-width: 1.75rem;
+          width: min(10vw, 24px);
         }
-      }
 
-      span.noti-badge {
-        background-color: red;
-        margin-left: 5px;
-        padding: 2px 5px;
-        border-radius: 5px;
+        .app-header-nav-more {
+          color: $color-gray-400;
+          color: var(--color-gray-400);
+          font-size: 1rem;
+          margin-left: 0.25rem;
+          --ionicon-stroke-width: 3rem;
 
-        &:hover {
-          color: $color-gray-900;
-          color: var(--color-gray-900);
-          transition: none;
+          @media (max-height: $mobile-w) {
+            display: none;
+          }
         }
-      }
-
-      &:hover {
-        color: $color-gray-700;
-        color: var(--color-gray-700);
 
         span.noti-badge {
-          color: $color-gray-900;
-          color: var(--color-gray-900);
-          transition: none;
+          background-color: red;
+          margin-left: 5px;
+          padding: 2px 5px;
+          border-radius: 5px;
+
+          &:hover {
+            color: $color-gray-900;
+            color: var(--color-gray-900);
+            transition: none;
+          }
+        }
+
+        &:hover {
+          color: $color-gray-700;
+          color: var(--color-gray-700);
+
+          span.noti-badge {
+            color: $color-gray-900;
+            color: var(--color-gray-900);
+            transition: none;
+          }
         }
       }
-    }
 
-    &.active > a {
-      color: $color-gray-900;
-      color: var(--color-gray-900);
-      color: #48f;
-      font-weight: 600;
+      &.active > a {
+        color: $color-gray-900;
+        color: var(--color-gray-900);
+        color: #48f;
+        font-weight: 600;
+      }
     }
   }
 }
